@@ -4,16 +4,8 @@
 
 <%= form_for @poll do |f| %>
 
-	<p>
-		<%= f.label :title %><br />
-		<%= f.text_field :title %>
-	</p>
+	<%= render 'form', :f => f %>
 
-	<%= f.fields_for :choices do |cf| %>
-		<%= cf.label :choice %>
-		<%= cf.text_field :choice %><br />
-	<% end %>
-	
 	<p>
 		<%= f.submit "Submit" %>
 	</p>

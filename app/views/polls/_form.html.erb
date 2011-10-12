@@ -1,0 +1,24 @@
+<p>
+	<%= f.label :title %><br />
+	<%= f.text_field :title %>
+</p>
+
+<ul>
+<%= f.fields_for :choices do |cf| %>
+	<li>
+	<%= cf.label :choice %>
+	<%= cf.text_field :choice %><br />
+	</li>
+<% end %>
+</ul>
+
+
+
+<!-- <script type="text/html" id="new_choice_form">
+	<#%= f.fields_for :choices, @poll.choices.build, :child_index => 'CHILD_INDEX' do |cf| %>
+		<#%= cf.label :choice %>
+		<#%= cf.text_field :choice %><br />
+	<#% end %>
+</script>
+
+<#%= link_to "Add", '#', :class => "new_form_link", "data-template" => 'new_choice_form' %> -->

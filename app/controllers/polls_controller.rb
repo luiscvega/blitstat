@@ -4,6 +4,11 @@ class PollsController < ApplicationController
   end
   
   def index
+    @all_polls = Poll.all
+  end
+  
+  def edit
+    @poll = Poll.find(params[:id])
   end
 
   def new
