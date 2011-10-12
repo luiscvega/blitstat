@@ -1,0 +1,21 @@
+<%= link_to "Return", root_path %>
+
+<h1>Create a Poll</h1>
+
+<%= form_for @poll do |f| %>
+
+	<p>
+		<%= f.label :title %><br />
+		<%= f.text_field :title %>
+	</p>
+
+	<%= f.fields_for :choices do |cf| %>
+		<%= cf.label :choice %>
+		<%= cf.text_field :choice %><br />
+	<% end %>
+	<p>
+	</p>
+	<p>
+		<%= f.submit "Submit" %>
+	</p>
+<% end %>
