@@ -1,2 +1,5 @@
-<h1>Polls#show</h1>
-<p>Find me in app/views/polls/show.html.erb</p>
+<h1>Check a Poll</h1>
+<p><%= @poll.title %></p>
+<% @poll.choices.each do |choice| %>
+	<%= choice.choice %><br />
+<% end %>
