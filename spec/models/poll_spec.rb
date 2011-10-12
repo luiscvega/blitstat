@@ -1,5 +1,11 @@
 require 'spec_helper'
 
 describe Poll do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before(:each) do
+    @attr = {:title => "Mac or PC?"}
+  end
+  
+  it "should create a new instance with valid attributes" do
+    Poll.create(@attr)
+  end
 end

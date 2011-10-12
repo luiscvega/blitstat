@@ -1,19 +1,11 @@
 require 'spec_helper'
 
 describe Choice do
-  render_views
+  before(:each) do
+    @attr = {:choice => "Mac"}
+  end
   
-  describe "GET 'main'" do
-    
-    it "should have the right title" do
-      get 'main'
-      response.should have_selector("title", :content => "Choose")
-    end
-    
-    it "should have the right title" do
-      get 'main'
-      response.should have_selector("title", :content => "Choose")
-    end
-    
+  it "should create a new instance with valid attributes" do
+    Choice.create(@attr)
   end
 end

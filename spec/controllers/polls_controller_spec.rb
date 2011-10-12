@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe PollsController do
-
+  render_views
+  
   describe "GET 'main'" do
     it "should be successful" do
       get 'main'
@@ -21,6 +22,29 @@ describe PollsController do
       get 'new'
       response.should be_success
     end
+  end
+  
+  describe "GET 'show'" do
+    
+    before(:each) do
+      @poll = FactoryGirl.create(:poll)
+    end
+    
+    it "should be successful" do
+      get 'show', :id => @poll
+      response.should be_success
+    end
+    
+    it "should have the right poll title" do
+      get 'show', :id => @poll
+      response.should have_selector("p", :content => @poll.title)
+    end
+  
+    it "should have the right choices" do
+      get 'show', :id => @poll
+      response.should have_selector("p", :content => @poll.choices.first)
+    end
+      
   end
   
 end

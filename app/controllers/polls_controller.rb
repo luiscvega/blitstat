@@ -20,7 +20,7 @@ class PollsController < ApplicationController
     @poll = Poll.find(params[:id])
   end
   
-  def create
+  def created
     @poll = Poll.new(params[:poll])
     if @poll.save
       flash[:notice] = "Successfully created poll."

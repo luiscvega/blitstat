@@ -2,5 +2,5 @@
 <h1>Check a Poll</h1>
 <p><%= @poll.title %></p>
 <% @poll.choices.each do |choice| %>
-	<%= choice.choice %><br />
+	<p><%= choice.choice %></p>
 <% end %>
