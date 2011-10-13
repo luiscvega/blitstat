@@ -17,6 +17,8 @@ end
 
 group :production do
 	gem 'pg'
+	gem 'execjs' 
+	gem 'therubyracer'
 end
 
 # Bundle edge Rails instead:
