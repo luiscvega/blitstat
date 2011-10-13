@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
+gem 'sqlite3', '1.3.4', :group => :development
 
 group :development do
   gem 'rspec-rails'
@@ -14,10 +15,14 @@ group :test do
   gem 'webrat'
 end
 
+group :production do
+	gem 'pg'
+end
+
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+# gem 'sqlite3'
 
 gem 'json'
 
