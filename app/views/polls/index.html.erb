@@ -4,7 +4,7 @@
 <h1>Browse Polls</h1>
 <% if @all_polls.any? %>
 	<% @all_polls.each do |poll| %>
-		<%= poll.title %><br />
+	<%= link_to poll.title, poll %><br />
 	<% end %>
 <% else %>
 	<p>No polls available</p>

@@ -1,6 +1,20 @@
 <%= link_to "Return", root_path %>
 <h1>Check a Poll</h1>
 <p><%= @poll.title %></p>
-<% @poll.choices.each do |choice| %>
-	<p><%= choice.choice %></p>
+
+
+<%= form_for @votes, :url => votes_path do |f| %>
+	<% @poll.choices.each do |choice| %>
+		<p>
+			<%= radio_button_tag( :choice, choice.choice) %>
+			<%= label_tag( (:choice.to_s + "_" + choice.choice).to_sym , choice.choice) %>
+			-
+			<%= choice.votes.count %> votes.
+
+			<% float = (choice.votes.count.to_f / Vote.where(:poll_id => choice.poll_id).count)*100 %>
+			<%= "%.0f" % float %>%
+		</p>
+	<% end %>		
+	<%= f.hidden_field(:poll_id, :value => @poll.id) %>
+	<%= f.submit "Submit" %>
 <% end %>
