@@ -1,5 +1,4 @@
 PollApp::Application.routes.draw do
-  get "votes/create"
 
   resources :polls
   resources :votes

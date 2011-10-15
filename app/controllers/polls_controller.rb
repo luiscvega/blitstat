@@ -13,14 +13,13 @@ class PollsController < ApplicationController
 
   def new
     @poll = Poll.new
-    2.times do @poll.choices.new end
+    2.times do @poll.choices.build end
   end
 
   def show
     @poll = Poll.find(params[:id])
-    @votes = @poll.choices.map do |choice|
-      choice.votes.new
-    end
+    @choices = @poll.choices
+    @vote = Vote.new
   end
   
   def create

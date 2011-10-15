@@ -10,5 +10,14 @@ module ApplicationHelper
   #   end
   #   link_to_function(name, h("add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")"))
   # end
-
+  
+  
+  def total_poll_votes(poll) #this will sum all the votes for a specific poll
+    poll.choices.map { |x| x.votes.count }.reduce(:+)
+  end
+  
+  def total_choice_votes(choice)
+    choice.votes.count
+  end
+  
 end

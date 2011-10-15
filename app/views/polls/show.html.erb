@@ -3,18 +3,13 @@
 <p><%= @poll.title %></p>
 
 
-<%= form_for @votes, :url => votes_path do |f| %>
-	<% @poll.choices.each do |choice| %>
-		<p>
-			<%= radio_button_tag( :choice, choice.choice) %>
-			<%= label_tag( (:choice.to_s + "_" + choice.choice).to_sym , choice.choice) %>
-			-
-			<%= choice.votes.count %> votes.
-
-			<% float = (choice.votes.count.to_f / Vote.where(:poll_id => choice.poll_id).count)*100 %>
-			<%= "%.0f" % float %>%
-		</p>
-	<% end %>		
-	<%= f.hidden_field(:poll_id, :value => @poll.id) %>
+<%= form_for @vote do |f| %>
+<% @choices.each do |choice|%>
+<p>
+	<%= f.radio_button :choice_id, choice.id %>
+	<%= f.label "choice_#{choice.id}", "#{choice.choice} (#{choice.votes.count}/#{@poll.total_votes})"%><br />
+	
+</p>
+<% end %>
 	<%= f.submit "Submit" %>
 <% end %>

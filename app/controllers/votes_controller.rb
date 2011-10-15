@@ -1,6 +1,12 @@
 class VotesController < ApplicationController
   def create
-    @vote = Choice.find_by_choice(params[:choice]).votes.create(params[:vote])
-    redirect_to @vote.choice.poll
+    @vote = Vote.new(params[:vote])
+    if @vote.save
+      redirect_to @vote.choice.poll, :notice => "Thanks for the vote!"
+    else
+      redirect_to :back, :notice => "Why are you trying to trick me?"
+    end
   end
+  
+  #find by id
 end

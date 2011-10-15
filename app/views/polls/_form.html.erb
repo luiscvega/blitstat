@@ -1,19 +1,18 @@
+<%= form_for @poll do |f| %>
 <p>
 	<%= f.label :title %><br />
 	<%= f.text_field :title %>
 </p>
 
 <ul>
-<%= f.fields_for :choices do |cf| %>
-	<li>
-	<%= cf.label :choice %>
-	<%= cf.text_field :choice %><br />
-	</li>
-<% end %>
+<%= render 'choices_form', :f => f %>
 </ul>
 
-
-
+	<p>
+		<%= f.submit "Submit" %>
+	</p>
+	
+<% end %>
 <!-- <script type="text/html" id="new_choice_form">
 	<#%= f.fields_for :choices, @poll.choices.build, :child_index => 'CHILD_INDEX' do |cf| %>
 		<#%= cf.label :choice %>
