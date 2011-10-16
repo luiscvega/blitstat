@@ -1,13 +1,12 @@
-<%= link_to "Return", root_path %>
-<h1>Check a Poll</h1>
-<p><%= @poll.title %></p>
+<p><%= link_to "Return", root_path %></p>
 
+<h1><%= @poll.title %></h1>
 
 <%= form_for @vote do |f| %>
 <% @choices.each do |choice|%>
 <p>
 	<%= f.radio_button :choice_id, choice.id %>
-	<%= f.label "choice_#{choice.id}", "#{choice.choice} (#{choice.votes.count}/#{@poll.total_votes})"%><br />
+	<%= f.label "choice_id_#{choice.id}", "#{choice.choice} (#{choice.votes.count}/#{@poll.total_votes})"%><br />
 	
 </p>
 <% end %>

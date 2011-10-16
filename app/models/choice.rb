@@ -3,7 +3,7 @@ class Choice < ActiveRecord::Base
   
   has_many :votes
   
-  accepts_nested_attributes_for :votes
+  validates_presence_of :choice
   
   def total_votes
     votes.count

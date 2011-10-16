@@ -1,16 +1,17 @@
 <%= form_for @poll do |f| %>
+
 <p>
 	<%= f.label :title %><br />
 	<%= f.text_field :title %>
 </p>
-
+	<%= f.label :choice %>
 <ul>
-<%= render 'choices_form', :f => f %>
+	<%= render 'choices_form', :f => f %>
 </ul>
 
-	<p>
-		<%= f.submit "Submit" %>
-	</p>
+<p>
+	<%= f.submit "Submit" %>
+</p>
 	
 <% end %>
 <!-- <script type="text/html" id="new_choice_form">

@@ -25,10 +25,9 @@ class PollsController < ApplicationController
   def create
     @poll = Poll.new(params[:poll])
     if @poll.save
-      flash[:notice] = "Successfully created poll."
-      redirect_to @poll
+      redirect_to @poll, :notice => "Successfully created poll."
     else
-      render :action => 'new'
+      redirect_to :back, :notice => "Why are you trying to trick me?"
     end
   end
 
