@@ -1,6 +1,5 @@
-<%= link_to "Return", root_path %><br />
-<%= link_to "Create a Poll", new_poll_path %>
-
+<p><%= link_to "Return", root_path %>&nbsp|&nbsp<%= link_to "Create a Poll", new_poll_path %>
+</p>
 <h1>Browse Polls</h1>
 <% if @all_polls.any? %>
 	<% @all_polls.each do |poll| %>

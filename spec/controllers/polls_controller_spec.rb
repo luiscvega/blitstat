@@ -33,21 +33,6 @@ describe PollsController do
     it "should be successful" do
       get 'show', :id => @poll
       response.should be_success
-    end
-    
-    it "should have the right poll title" do
-      get 'show', :id => @poll
-      response.should have_selector("p", :content => @poll.title)
-    end
-  
-    it "should have the right choices" do
-      get 'show', :id => @poll
-      response.should have_selector("p", :content => @poll.choices.first)
-    end
-    
-    it "should have radio buttons with the right labels" do
-      get 'show', :id => @poll
-      response.should have_selector("input", :type => "radio", :content => @poll.choices)
     end  
   end
   

@@ -7,6 +7,4 @@ class VotesController < ApplicationController
       redirect_to :back, :notice => "Why are you trying to trick me?"
     end
   end
-  
-  #find by id
 end
