@@ -12,8 +12,18 @@
 	<%= stylesheet_link_tag "application" %>
 	
 </head>
+
 <body>
 	<div class="container">
+		<div id="user_nav">
+			<% if current_user %>
+				Logged in as <%= current_user.email %>.
+				<%= link_to "Log out", logout_path %>
+			<% else %>
+				<%= link_to "Sign-up", signup_path %>
+				<%= link_to "Log In", login_path %>
+			<% end %>
+		</div>
 
 	<%= render 'layouts/header' %>		
 	

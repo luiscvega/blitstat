@@ -1,7 +1,13 @@
 PollApp::Application.routes.draw do
-
+  get "login" => "sessions#new", :as => "login"
+  get "logout" => "sessions#destroy", :as => "logout"
+  
+  resources :sessions
   resources :polls
   resources :votes
+  resources :users
+  
+  get "signup" => "users#new", :as => "signup"
   
   root :to => 'polls#main'
 

@@ -19,5 +19,5 @@ module ApplicationHelper
   def total_choice_votes(choice)
     choice.votes.count
   end
-  
+
 end
