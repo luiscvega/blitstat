@@ -1,4 +1,5 @@
 class PollsController < ApplicationController
+  before_filter :authenticate, :only => :new
   
   def main
   end
@@ -27,7 +28,7 @@ class PollsController < ApplicationController
     if @poll.save
       redirect_to @poll, :notice => "Successfully created poll."
     else
-      redirect_to :back, :notice => "Why are you trying to trick me?"
+      redirect_to new_poll_path, :notice => "Why are you trying to trick me?"
     end
   end
 
