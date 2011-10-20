@@ -34,7 +34,7 @@ class PollsController < ApplicationController
   end
   
   def user_polls
-    @polls = Poll.where("user_id == ?", current_user.id)
+    @polls = Poll.where("user_id = ?", current_user.id)
   end
 
 end
