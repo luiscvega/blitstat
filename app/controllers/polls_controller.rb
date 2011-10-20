@@ -19,12 +19,13 @@ class PollsController < ApplicationController
 
   def show
     @poll = Poll.find(params[:id])
+    @user = @poll.user
     @choices = @poll.choices
     @vote = Vote.new
   end
   
   def create
-    @poll = Poll.new(params[:poll])
+    @poll = current_user.polls.new(params[:poll])
     if @poll.save
       redirect_to @poll, :notice => "Successfully created poll."
     else
