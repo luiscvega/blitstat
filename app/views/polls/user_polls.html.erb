@@ -1,0 +1,6 @@
+<h1><%= current_user.username %>'s Polls</h1>
+<ol>
+<% @polls.each do |poll| %>
+	<li><%= poll.title %></li>
+<% end %>
+</ol>

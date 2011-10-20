@@ -1,6 +1,6 @@
 class VotesController < ApplicationController
   def create
-    @vote = Vote.new(params[:vote])
+    @vote = current_user.votes.new(params[:vote])
     if @vote.save
       redirect_to @vote.choice.poll, :notice => "Thanks for the vote!"
     else

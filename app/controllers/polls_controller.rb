@@ -32,5 +32,9 @@ class PollsController < ApplicationController
       redirect_to new_poll_path, :notice => "Why are you trying to trick me?"
     end
   end
+  
+  def user_polls
+    @polls = Poll.where("user_id == ?", current_user.id)
+  end
 
 end

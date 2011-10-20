@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :polls
+  has_many :votes
   attr_accessible :email, :password, :password_confirmation, :username
   
   attr_accessor :password

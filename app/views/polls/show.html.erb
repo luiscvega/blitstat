@@ -7,9 +7,11 @@
 	<% @choices.each do |choice|%>
 	<p>
 		<%= f.radio_button :choice_id, choice.id %>
-		<%= f.label "choice_id_#{choice.id}", "#{choice.choice} (#{choice.total_votes}/#{@poll.total_votes})"%><br />
+		<%= f.label "choice_id_#{choice.id}", "#{choice.choice}
+		(#{choice.total_votes}/#{@poll.total_votes})"%><br />
 	
 	</p>
 	<% end %>
 	<%= f.submit "Submit" %>
 <% end %>
+

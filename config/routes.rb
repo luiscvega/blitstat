@@ -7,6 +7,8 @@ PollApp::Application.routes.draw do
   resources :votes
   resources :users
   
+  match "user_polls", :to => 'polls#user_polls', :as => "mypolls"
+  
   get "signup" => "users#new", :as => "signup"
   
   root :to => 'polls#main'
