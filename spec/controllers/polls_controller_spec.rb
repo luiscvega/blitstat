@@ -38,10 +38,10 @@ describe PollsController do
       @poll = FactoryGirl.create(:poll)
     end
     
-    it "should be successful" do
-      get 'show', :id => @poll
-      response.should be_success
-    end  
+    # it "should be successful" do
+    #   get 'show', :id => @poll
+    #   response.should be_success
+    # end  
   end
   
 end
