@@ -3,6 +3,9 @@
 <h1><%= @poll.title %></h1>
 <h2>Created by <%= @user.username %></h2>
 
+
+
+
 <%= form_for @vote do |f| %>
 	<% @choices.each do |choice|%>
 	<p>
