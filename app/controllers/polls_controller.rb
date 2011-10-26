@@ -22,6 +22,17 @@ class PollsController < ApplicationController
     @user = @poll.user
     @choices = @poll.choices
     @vote = Vote.new
+    @data = @choices.map do |choice|
+      choice.votes.count
+    end
+    @labels = @choices.map do |choice|
+      choice.choice
+    end
+    
+    @chart = Gchart.pie_3d(:title => @poll.title, 
+                           :labels => @labels, 
+                           :data => @data, 
+                           :size => '400x200')
   end
   
   def create

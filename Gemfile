@@ -5,6 +5,8 @@ gem 'sqlite3', '1.3.4', :group => :development
 
 gem 'bcrypt-ruby', :require => 'bcrypt'
 
+gem 'googlecharts'
+
 group :development do
   gem 'rspec-rails'
 	gem 'annotate'

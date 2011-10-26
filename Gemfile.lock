@@ -49,6 +49,7 @@ GEM
     factory_girl_rails (1.2.0)
       factory_girl (~> 2.1.0)
       railties (>= 3.0.0)
+    googlecharts (1.6.8)
     hike (1.2.1)
     i18n (0.6.0)
     jquery-rails (1.0.14)
@@ -144,6 +145,7 @@ DEPENDENCIES
   coffee-rails (~> 3.1.1)
   execjs
   factory_girl_rails
+  googlecharts
   jquery-rails
   json
   pg
