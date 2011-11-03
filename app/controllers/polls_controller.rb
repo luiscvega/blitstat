@@ -33,10 +33,9 @@ class PollsController < ApplicationController
     end
     
     #GENERATED CHART FROM GOOGLE CHARTS API
-    @chart = Gchart.pie_3d(:title => @poll.title, 
-                           :labels => @labels, 
+    @chart = Gchart.pie_3d(:labels => @labels, 
                            :data => @data, 
-                           :size => '400x200')
+                           :size => '750x200')
   end
   
   def create
