@@ -1,20 +1,25 @@
-<%= form_for @poll do |f| %>
+<%= form_for @poll do |form| %>
 
 <p>
-	<%= f.label :title %><br />
-	<%= f.text_field :title %>
+	<%= form.label :title %><br />
+	<%= form.text_field :title %>
 </p>
 
 <ul>
-	<%= f.label :choice %>
-	<%= render 'choices_form', :f => f %>
+	<%= form.label :choice %>
+	<%= form.fields_for :choices do |choice_form| %>
+  	<li>
+  	<%= choice_form.text_field :choice %><br />
+  	</li>
+  <% end %>
 </ul>
 
 <p>
-	<%= f.submit "Submit" %>
+	<%= form.submit "Submit" %>
 </p>
 	
 <% end %>
+
 <!-- <script type="text/html" id="new_choice_form">
 	<#%= f.fields_for :choices, @poll.choices.build, :child_index => 'CHILD_INDEX' do |cf| %>
 		<#%= cf.label :choice %>
