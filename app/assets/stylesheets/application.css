@@ -6,6 +6,15 @@
  *= require_tree . 
 */
 
+.center {
+	text-align: center;
+}
+
+.chart {
+	display: block;
+	margin: 0 auto;
+}
+
 .container {
 	width: 800px;
 }
