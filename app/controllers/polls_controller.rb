@@ -29,7 +29,7 @@ class PollsController < ApplicationController
     end
     #GENERATE LABELs FOR CHARTS
     @labels = @choices.map do |choice|
-      choice.choice
+      choice.title
     end
     
     #GENERATED CHART FROM GOOGLE CHARTS API

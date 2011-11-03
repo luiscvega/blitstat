@@ -5,13 +5,12 @@
 
 <%= image_tag(@chart) %>
 
-
 <%= form_for @vote do |f| %>
 	<% @choices.each do |choice|%>
 	<p>
 		<%= f.radio_button :choice_id, choice.id %>
-		<%= f.label "choice_id_#{choice.id}", "#{choice.choice}
-		(#{choice.total_votes}/#{@poll.total_votes})"%><br />
+		<%= f.label "choice_id_#{choice.id}", 
+		"#{choice.title} (#{choice.total_votes}/#{@poll.total_votes})"%><br />
 	
 	</p>
 	<% end %>

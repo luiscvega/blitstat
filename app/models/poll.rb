@@ -3,6 +3,7 @@ class Poll < ActiveRecord::Base
   belongs_to :user
 
   accepts_nested_attributes_for :choices
+  
   attr_accessible :title, :choices_attributes
   
   validates_presence_of :title, :user_id

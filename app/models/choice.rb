@@ -3,7 +3,7 @@ class Choice < ActiveRecord::Base
   
   has_many :votes
   
-  validates_presence_of :choice
+  validates_presence_of :title
   
   def total_votes
     votes.count
