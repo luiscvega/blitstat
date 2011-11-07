@@ -37,8 +37,10 @@ class PollsController < ApplicationController
                            :data => @data, 
                            :size => '750x200')
   end
-  
+
+
   def create
+    raise params.inspect
     @poll = current_user.polls.new(params[:poll])
     if @poll.save
       redirect_to @poll, :notice => "Successfully created poll."

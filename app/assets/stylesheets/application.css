@@ -92,6 +92,7 @@ a.button {
   font-size: 150%;
   font-weight: bold;
   padding: 20px;
+	text-decoration: none;
 }
 
 li {
