@@ -40,7 +40,6 @@ class PollsController < ApplicationController
 
 
   def create
-    raise params.inspect
     @poll = current_user.polls.new(params[:poll])
     if @poll.save
       redirect_to @poll, :notice => "Successfully created poll."
