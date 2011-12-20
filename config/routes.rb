@@ -2,6 +2,8 @@ PollApp::Application.routes.draw do
   get "login" => "sessions#new", :as => "login"
   get "logout" => "sessions#destroy", :as => "logout"
   
+  match '/auth/twitter/callback', to: 'sessions#twitter_create'
+  
   resources :sessions
   resources :polls
   resources :votes

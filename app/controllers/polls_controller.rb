@@ -24,18 +24,23 @@ class PollsController < ApplicationController
     @vote = Vote.new
     
     #GENERATE DATA FOR CHART
-    @data = @choices.map do |choice|
+    @votes = @choices.map do |choice|
       choice.votes.count
     end
+    
     #GENERATE LABELs FOR CHARTS
     @labels = @choices.map do |choice|
       choice.title
     end
+
     
-    #GENERATED CHART FROM GOOGLE CHARTS API
+    
+    
+    # GENERATED CHART FROM GOOGLE CHARTS API
     @chart = Gchart.pie_3d(:labels => @labels, 
-                           :data => @data, 
+                           :data => @votes, 
                            :size => '750x200')
+    
   end
 
 

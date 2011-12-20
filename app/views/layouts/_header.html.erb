@@ -3,7 +3,7 @@
     <ul>
       <li><%= link_to "Home", root_path %> |&nbsp</li>
 				<% if current_user %>
-					<li>Logged in as <%= current_user.email %></li>
+					<li>Logged in as <%= current_user.username %></li>
 					<li><%= link_to "My Polls", mypolls_path %></li>
 					<li><%= link_to "Log out", logout_path %></li>
 				<% else %>

@@ -29,6 +29,7 @@ GEM
       activesupport (= 3.1.1)
     activesupport (3.1.1)
       multi_json (~> 1.0)
+    addressable (2.2.6)
     annotate (2.4.0)
     arel (2.2.1)
     bcrypt-ruby (3.0.1)
@@ -49,7 +50,12 @@ GEM
     factory_girl_rails (1.2.0)
       factory_girl (~> 2.1.0)
       railties (>= 3.0.0)
+    faraday (0.7.5)
+      addressable (~> 2.2.6)
+      multipart-post (~> 1.1.3)
+      rack (>= 1.1.0, < 2)
     googlecharts (1.6.8)
+    hashie (1.2.0)
     hike (1.2.1)
     i18n (0.6.0)
     jquery-rails (1.0.14)
@@ -63,7 +69,17 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.16)
     multi_json (1.0.3)
+    multipart-post (1.1.4)
     nokogiri (1.5.0)
+    oauth (0.4.5)
+    omniauth (1.0.1)
+      hashie (~> 1.2)
+      rack
+    omniauth-oauth (1.0.0)
+      oauth
+      omniauth (~> 1.0)
+    omniauth-twitter (0.0.7)
+      omniauth-oauth (~> 1.0)
     pg (0.11.0)
     polyglot (0.3.2)
     prototype-rails (3.1.0)
@@ -115,6 +131,7 @@ GEM
       sass (>= 3.1.4)
       sprockets (~> 2.0.0)
       tilt (~> 1.3.2)
+    simple_oauth (0.1.5)
     sprockets (2.0.2)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -127,6 +144,11 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
+    twitter (2.0.1)
+      activesupport (>= 2.3.9, < 4)
+      faraday (~> 0.7)
+      multi_json (~> 1.0)
+      simple_oauth (~> 0.1)
     tzinfo (0.3.30)
     uglifier (1.0.3)
       execjs (>= 0.3.0)
@@ -141,13 +163,14 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
-  bcrypt-ruby
+  bcrypt-ruby (~> 3.0.0)
   coffee-rails (~> 3.1.1)
   execjs
   factory_girl_rails
   googlecharts
   jquery-rails
   json
+  omniauth-twitter
   pg
   prototype-rails
   rails (= 3.1.1)
@@ -155,5 +178,6 @@ DEPENDENCIES
   sass-rails (~> 3.1.4)
   sqlite3 (= 1.3.4)
   therubyracer
+  twitter
   uglifier (>= 1.0.3)
   webrat

@@ -3,8 +3,10 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.1'
 gem 'sqlite3', '1.3.4', :group => :development
 
-gem 'bcrypt-ruby', :require => 'bcrypt'
+# gem 'bcrypt-ruby', :require => 'bcrypt'
 
+gem 'twitter'
+gem 'omniauth-twitter'
 gem 'googlecharts'
 
 group :development do
@@ -43,7 +45,7 @@ end
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the web server
 # gem 'unicorn'
